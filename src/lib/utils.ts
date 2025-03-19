@@ -13,7 +13,7 @@ export function formatVietnamCurrency(value: number) {
         currency: 'VND',
     });
 
-    return formatter.format(value).replace('.', ',').replace('₫', '').trim();
+    return formatter.format(value).replace(/\./g, ',').replace('₫', '').trim();
 }
 
 export const formatDate = (dateString: string) => {

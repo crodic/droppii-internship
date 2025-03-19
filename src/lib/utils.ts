@@ -23,8 +23,8 @@ export const formatDate = (dateString: string) => {
 };
 
 export const formatNumber = (num: number) => {
-    if (num >= 1e3) {
-        return (num / 1e3).toFixed(1) + 'k';
+    if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'k';
     }
     return num.toString();
 };

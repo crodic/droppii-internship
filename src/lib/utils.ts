@@ -1,4 +1,3 @@
-import { ProductData } from '@/types/index.type';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { format } from 'date-fns';
@@ -17,19 +16,15 @@ export function formatVietnamCurrency(value: number) {
     return formatter.format(value).replace('.', ',').replace('₫', '').trim();
 }
 
-export const delayRequest = (
-    ms: number,
-    data: ProductData[],
-    options: { perPage: number; page: number }
-): Promise<ProductData[]> => {
-    const startIndex = (options.page - 1) * options.perPage;
-    const endIndex = startIndex + options.perPage;
-    const sliceData = data.slice(startIndex, endIndex);
-    return new Promise((resolve) => setTimeout(() => resolve(sliceData), ms));
-};
-
 export const formatDate = (dateString: string) => {
-    const timeZone = 'Asia/Ho_Chi_Minh'; // Điều chỉnh theo múi giờ của bạn
+    const timeZone = 'Asia/Ho_Chi_Minh';
     const date = toZonedTime(dateString, timeZone);
     return format(date, 'HH:mm•dd/MM');
+};
+
+export const formatNumber = (num: number) => {
+    if (num >= 1e3) {
+        return (num / 1e3).toFixed(1) + 'k';
+    }
+    return num.toString();
 };

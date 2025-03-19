@@ -12,7 +12,7 @@ const PER_PAGE_DEFAULT = 12;
 
 export default async function HomePage({ searchParams }: { searchParams: { [key: string]: string } }) {
     const page = isNaN(Number(searchParams.page)) ? 1 : Number(searchParams.page);
-    const data: ProductData[] = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products?page=${page}`, {
+    const data: ProductData[] = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products?page=${page}`, {
         next: { revalidate: 60 },
         headers: {
             'Content-Type': 'application/json',

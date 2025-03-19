@@ -6,7 +6,7 @@ import ShippingIcon from './icons/shipping-icon';
 import BoxIcon from './icons/box-icon';
 import HeartIcon from './icons/heart-icon';
 import { ProductData } from '@/types/index.type';
-import { cn, formatDate, formatVietnamCurrency } from '@/lib/utils';
+import { cn, formatDate, formatNumber, formatVietnamCurrency } from '@/lib/utils';
 import useWishList from '@/stores/use-wish-list';
 import { Heart } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
@@ -86,7 +86,11 @@ export default function ProductCard({ data }: Props) {
                     <div className="card-price text-[#f79009] text-[14px] leading-[22.4px] font-semibold">
                         <span className="underline">đ</span> {formatVietnamCurrency(data.price)}
                     </div>
-                    {data.sold > 0 && <p className="card-sold text-[#5c6366] text-xs leading-[19.2px]">28,4k Đã bán</p>}
+                    {data.sold > 0 && (
+                        <p className="card-sold text-[#5c6366] text-xs leading-[19.2px]">
+                            {formatNumber(data.sold)} Đã bán
+                        </p>
+                    )}
                 </div>
             </CardContent>
         </Card>

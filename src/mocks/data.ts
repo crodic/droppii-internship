@@ -6,7 +6,7 @@ export const mockProducts: ProductData[] = [
         title: 'Bàn làm việc gỗ sồi',
         price: 4500000,
         discountPercentage: 0,
-        sold: 320,
+        sold: 32712,
         thumbnail: 'sp1.webp',
         isFreeShipping: true,
         salesTime: '2025-03-20T10:00:00Z',

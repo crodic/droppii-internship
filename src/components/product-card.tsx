@@ -29,7 +29,7 @@ export default function ProductCard({ data }: Props) {
     };
 
     return (
-        <Card className="max-w-[183px] w-full overflow-hidden">
+        <Card className="max-w-[183px] w-full overflow-hidden hover:shadow-lg transition-shadow">
             <CardContent className="p-0 rounded-lg cursor-pointer">
                 <div className="card-image relative">
                     <Image src="/sp1.webp" alt="sp1" width={183} height={179} />

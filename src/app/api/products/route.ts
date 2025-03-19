@@ -15,7 +15,7 @@ export const GET = async (request: NextRequest) => {
         const endIndex = startIndex + PER_PAGE_DEFAULT;
         const sliceData = mockProducts.slice(startIndex, endIndex);
 
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        // await new Promise((resolve) => setTimeout(resolve, 3000));
 
         return NextResponse.json(sliceData, { status: 200 });
     } catch (error) {
